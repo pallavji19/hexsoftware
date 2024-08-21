@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #task-input {
+            width: 50%;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+        }
+
+        #add-task-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #add-task-btn:hover {
+            background-color: #3e8e41;
+        }
+
+        #task-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        #task-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #task-list li:last-child {
+            border-bottom: none;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List </h1>
+    <input type="text" id="task-input" placeholder="Enter a task">
+    <button id="add-task-btn">Add Task</button>
+    <ul id="task-list"></ul>
+
+    <script>
+        // Get the task input field, add task button, and task list
+        const taskInput = document.getElementById('task-input');
+        const addTaskBtn = document.getElementById('add-task-btn');
+        const taskList = document.getElementById('task-list');
+
+        // Get the stored tasks from local storage
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        // Render the task list
+        function TaskList() {
+            taskList.innerHTML = '';
+            tasks.forEach((task, index) => {
+                const taskListItem = document.createElement('li');
+                taskListItem.textContent = task.text;
+                taskListItem.dataset.index = index;
+                if (task.completed) {
+                    taskListItem.classList.add('completed');
+                }
+                taskList.appendChild(taskListItem);
+            });
+        }
+
+        // Add a new task
+        addTaskBtn.addEventListener('click', () => {
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                try {
+                    tasks.push({ text: taskText, completed: false });
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                    taskInput.value = '';
+                    renderTaskList();
+                } catch (error) {
+                    console.error('Error adding task:', error);
+                }
+            } else {
+                alert('Please enter a task');
+            }
+        });
+
+        // Mark a task as completed
+        taskList.addEventListener('click', (e) => {
+            if (e.target.tagName === 'LI') {
+                try {
+                    const index = e.target.dataset.index;
+                    tasks[index].completed = !tasks[index].completed;
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                    renderTaskList();
+                } catch (error) {
+                    console.error('Error marking task as completed:', error);
+                }
+            }
+        });
+
+        // Remove a task
+        taskList.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'LI') {
+                e.preventDefault();
+                try {
+                    const index = e.target.dataset.index;
+                    tasks.splice(index, 1);
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                    renderTaskList();
+                } catch (error) {
+                    console.error('Error removing task:', error);
+                }
+            }
+        });
+
+        // Render the task list on page load
+        TaskList();
+    </script>
+</body>
+</html>

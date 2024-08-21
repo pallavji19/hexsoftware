@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="" type="image/x-icon">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6em;
+        background-color: #f5f5f5;
+        line-height: 1.6em;
+      }
+      
+      header {
+        background: #858080;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      
+      nav ul li {
+        margin: 0 1rem;
+      }
+      
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+      
+      nav ul li a:hover {
+        color: #ddd;
+      }
+      
+      main {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      section {
+        padding: 2rem;
+        margin: 1rem auto;
+        max-width: 800px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        background: #f9f9f9;
+      }
+
+        section h1, section h2 {
+            color: #b34545;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 1.5rem;
+        }
+
+        .experience-item {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 0.5rem;
+        }
+
+        form input, form textarea {
+            padding: 0.5rem;
+            margin-top: 0.2rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        form button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #262424;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ; /* Add transition effect */
+}
+
+form button:hover {
+    background: #555;
+}
+
+form button:active {
+    transform: translateY(2px); /* Add a slight press effect */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+form button:focus {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    outline: none; /* Remove the default outline */
+}
+        footer {
+            background: #a98888;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+                margin: 0.5rem auto;
+            }
+
+            .experience-item {
+                padding: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            form input, form textarea {
+                padding: 0.2rem;
+                margin-top: 0.1rem;
+            }
+
+            form button {
+                margin-top: 0.5rem;
+                padding: 0.2rem;
+            }
+            #contact a:not(.btn-floating) {
+                    text-align: center;
+                    display: block;
+                    left: initial;
+                    bottom: initial;
+                 }
+     #contact a.btn-floating.btn-large {
+                 display: block;
+                text-align: center;
+                margin: 0 auto;
+        }
+      #intro.section {
+                background-position-x: 30%;
+            }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#bio">Bio</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="bio">
+            <h1>About Me</h1>
+            <p>Hello! I'm <b>Pallav Kumar</b>, a passionate web developer with a love for creating dynamic and responsive websites. My goal is to build efficient and user-friendly solutions that enhance the web experience.</p>
+        </section>
+    
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Node.js</li>
+                <li>Responsive Design</li>
+                <li>Version Control (Git)</li>
+            </ul>
+        </section>
+    
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Web Intern at Company hexsoftware</h3>
+                <p>Assisted in developing web applications and gained experience with frontend and backend technologies.</p>
+                <span>Aug 2021 - Sept 2021</span>
+            </div>
+        </section>
+    
+        
+
+
+
+         <!-- Eight Section: Contact -->
+    <section id="contact" class="section scrollspy full-height">
+        <h3 class="page-title white-text teal">Contact</h3>
+        <div class="container">
+          <p>
+            <a aria-label="Call Varad" data-position="top" data-tooltip="Call pallav"
+              class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
+                aria-label="Call pallav">+917505295821</a></a>
+          </p>
+          <p>
+            <a aria-label="Email pallav" href="mailto:kumarpallav388@gmail.com" target="_blank" data-position="top"
+              data-tooltip="Email pallav" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                class="fa fa-envelope"></i><a aria-label="Email pallav" href="mailto:kumarpallav388@gmail.com"
+                class="hoverline">kumarpallav388@gmail.com</a></a>
+          </p>
+          <p>
+            <a aria-label="View pallav on GitHub" href="https://github.com/pallavji19" target="_blank"
+              data-position="top" data-tooltip="View pallav on GitHub"
+              class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
+                aria-label="pallav on Github" href="https://github.com/pallavji19" class="hoverline"
+                target="_blank">https://github.com/pallavji19</a></a>
+          </p>
+          <p>
+            <a aria-label="View pallav on LinkedIn" href="https://www.linkedin.com/in/pallav-kumar-99b673268" target="_blank"
+              data-position="top" data-tooltip="View Varad on LinkedIn"
+              class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                class="fa fa-linkedin"></i><a aria-label="Pallav on LinkedIn" href="https://www.linkedin.com/in/pallav-kumar-99b673268"
+                class="hoverline" target="_blank">https://www.linkedin.com/in/pallav-kumar-99b673268</a></a>
+          </p>
+        </div>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    </main>
+  
+   
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Pallav Kumar. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+    
+            alert(`Thank you, ${name}! Your message has been sent.`);
+        });
+    </script>
+     <!-- typed.js -->
+     <script src="assets/vendor/typed.js/typed.min.js"></script>
+     <script type="text/javascript">
+       var typed = new Typed('.typing',{
+         strings: ["Pythonist", "Developer", "Fast Learner"],
+         loop: true,
+         typeSpeed: 80,
+         backSpeed: 40
+       });
+     </script>
+   
+   
+     <!-- jQuery-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   
+     <!-- Materialize - Compiled and minified JavaScript-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+     <script>
+       // Materialize - Initializers
+       $(document).ready(function () {
+         $(".scrollspy").scrollSpy()
+         // Initialize collapse button
+         $(".button-collapse").sideNav({
+           menuWidth: 190, // Default is 240
+           edge: "left", // Choose the horizontal origin
+           closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+         })
+       });
+     </script>
+</body>
+</html>
+
